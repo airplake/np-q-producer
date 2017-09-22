@@ -12,7 +12,7 @@ const { consumer } = require('../index')
 let config = {
   exchange: 'night',
   queue: {
-    connection: 'amqp://admin:admin1@127.0.0.1:5672',
+    connection: 'amqp://admin:admin@192.168.31.9:5672',
     channel: 'ZOO_QUEUE',
     consumerAdapters: [{
       queueName: 'task'

@@ -2,10 +2,19 @@
   "name": "night-zoo-trigger",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
   "scripts": {
     "standard": "./node_modules/.bin/standard --fix"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:airplake/night-zoo-trigger.git"
+  },
+  "author": "Airplake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airplake/night-zoo-trigger/issues"
+  },
+  "homepage": "https://github.com/airplake/night-zoo-trigger",
   "dependencies": {
     "amqplib": "^0.5.1",
     "async": "^2.5.0",
