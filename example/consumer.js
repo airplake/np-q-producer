@@ -7,9 +7,22 @@
  * Copyright (c) 2017 Your Company
  */
 
-const {consumer} = require('../index')
+const { consumer } = require('../index')
 
-consumer.start((err, message) => {
+let config = {
+  exchange: 'night',
+  queue: {
+    connection: 'amqp://admin:admin1@127.0.0.1:5672',
+    channel: 'ZOO_QUEUE',
+    consumerAdapters: [{
+      queueName: 'task'
+    }, {
+      queueName: 'new'
+    }]
+  }
+}
+
+consumer.start(config, (err, message) => {
   if (err) console.log('err', err)
   console.log('Consumer started.', message)
 })

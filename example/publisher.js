@@ -7,9 +7,22 @@
  * Copyright (c) 2017 Your Company
  */
 
+require('dotenv').config() // eslint-disable-line 
 const { publisher } = require('../index')
 
-publisher.start((err) => {
+let config = {
+  exchange: 'night',
+  queue: {
+    connection: 'amqp://admin:admin1@127.0.0.1:5672',
+    channel: 'ZOO_QUEUE',
+    consumerAdapters: [{
+      queueName: 'task'
+    }, {
+      queueName: 'new'
+    }]
+  }
+}
+publisher.start(config, (err) => {
   if (err) console.log('publish start', err)
   console.log('publish start')
 

@@ -1,5 +1,6 @@
-night-zoo-trigger
-night-zoo-trigger  mq service 
+# night-zoo-trigger
+
+**night-zoo-trigger  mq service**
 
 ## Install
 
@@ -18,7 +19,20 @@ you need add this to startup file
 ```
 const { publisher } = require('night-zoo-trigger')
 
-publisher.start((err) => {
+let config = {
+  exchange: 'night',
+  queue: {
+    connection: 'amqp://admin:admin1@127.0.0.1:5672',
+    channel: 'ZOO_QUEUE',
+    consumerAdapters: [{
+      queueName: 'task'
+    }, {
+      queueName: 'new'
+    }]
+  }
+}
+
+publisher.start(config,(err) => {
     console.log('publish start')
 })
 ```
@@ -38,10 +52,27 @@ publisher.publish({a:1}, 'task', function (err) {
 ```
 const { consumer } = require('night-zoo-trigge')
 
-consumer.start( (err,message) => {
+let config = {
+  exchange: 'night',
+  queue: {
+    connection: 'amqp://admin:admin1@127.0.0.1:5672',
+    channel: 'ZOO_QUEUE',
+    consumerAdapters: [{
+      queueName: 'task'
+    }, {
+      queueName: 'new'
+    }]
+  }
+}
+
+consumer.start(config,(err,message) => {
     console.log('Consumer started.',message)
 })
 ```
+
+## Example
+
+[Example](https://github.com/airplake/night-zoo-trigger/tree/master/example)
 
 
 ## JavaScript Style
@@ -53,6 +84,6 @@ npm run standard
 
 
 ### Contributors
-阿文 @kelvv
-老魏 @qknow
-徐晨 @shadow88sky
+阿文 @kelvv  
+老魏 @qknow  
+徐晨 @shadow88sky  

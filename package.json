@@ -9,7 +9,6 @@
   "dependencies": {
     "amqplib": "^0.5.1",
     "async": "^2.5.0",
-    "config": "^1.26.2",
     "standard": "^10.0.3"
   }
 }
