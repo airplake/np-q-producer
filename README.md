@@ -86,7 +86,8 @@ npm run standard
 
 
 ### Contributors
-阿文 @kelvv  
-老魏 @qknow  
-徐晨 @shadow88sky  
-文青 @Wenqing Yu
+[阿文 @kelvv](https://github.com/kelvv)  
+[老魏 @qknow](https://github.com/503945930)  
+[徐晨 @shadow88sky](https://github.com/shadow88sky)  
+[文青 @Wenqing Yu](https://github.com/wenqingyu)
+[业生 @CNBlackJ](https://github.com/CNBlackJ)
