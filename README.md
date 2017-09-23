@@ -1,17 +1,17 @@
-# night-zoo-trigger
+# np-q-producer
 
 =========================
 
-**night-zoo-trigger  mq service**
+**np-q-producer queue service**
 
 ## Install
 
 ```console
-$ npm install --save night-zoo-trigger
+$ npm install --save np-q-producer
 ```
 or
 ```console
-$ yarn add  night-zoo-trigger
+$ yarn add  np-q-producer
 ```
 
 ## Usage
@@ -19,12 +19,12 @@ $ yarn add  night-zoo-trigger
 ### startup
 you need add this to startup file
 ```
-const { publisher } = require('night-zoo-trigger')
+const { publisher } = require('np-q-producer')
 
 let config = {
   exchange: 'night',
   queue: {
-    connection: 'amqp://admin:admin1@127.0.0.1:5672',
+    connection: 'amqp://admin:admin@127.0.0.1:5672',
     channel: 'ZOO_QUEUE',
     consumerAdapters: [{
       queueName: 'task'
@@ -42,7 +42,7 @@ publisher.start(config,(err) => {
 ### publisher
 
 ```
-const { publisher } = require('night-zoo-trigger')
+const { publisher } = require('np-q-producer')
 
 publisher.publish({a:1}, 'task', function (err) {
     console.log('publish success')
@@ -52,12 +52,12 @@ publisher.publish({a:1}, 'task', function (err) {
 ### consumer
 
 ```
-const { consumer } = require('night-zoo-trigge')
+const { consumer } = require('np-q-producer')
 
 let config = {
   exchange: 'night',
   queue: {
-    connection: 'amqp://admin:admin1@127.0.0.1:5672',
+    connection: 'amqp://admin:admin@127.0.0.1:5672',
     channel: 'ZOO_QUEUE',
     consumerAdapters: [{
       queueName: 'task'
@@ -74,7 +74,7 @@ consumer.start(config,(err,message) => {
 
 ## Example
 
-[Example](https://github.com/airplake/night-zoo-trigger/tree/master/example)
+[Example](https://github.com/airplake/np-q-producer/tree/master/example)
 
 
 ## JavaScript Style

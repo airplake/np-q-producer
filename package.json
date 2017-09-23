@@ -1,5 +1,5 @@
 {
-  "name": "night-zoo-trigger",
+  "name": "np-q-producer",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:airplake/night-zoo-trigger.git"
+    "url": "https://github.com/airplake/np-q-producer.git"
   },
   "author": "Airplake",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/airplake/night-zoo-trigger/issues"
+    "url": "https://github.com/airplake/np-q-producer/issues"
   },
-  "homepage": "https://github.com/airplake/night-zoo-trigger",
+  "homepage": "https://github.com/airplake/np-q-producer",
   "dependencies": {
     "amqplib": "^0.5.1",
     "async": "^2.5.0",
