@@ -22,7 +22,8 @@ let config = {
   }
 }
 
-consumer.start(config, (err, message) => {
+consumer.start(config, (err, queueName,message) => {
   if (err) console.log('err', err)
+  console.log('Consumer queueName.', queueName)
   console.log('Consumer started.', message)
 })

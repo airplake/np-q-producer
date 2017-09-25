@@ -7,7 +7,6 @@
  * Copyright (c) 2017 Your Company
  */
 
-require('dotenv').config() // eslint-disable-line 
 const { publisher } = require('../index')
 
 let config = {
