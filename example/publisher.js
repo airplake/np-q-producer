@@ -11,8 +11,9 @@ const { publisher } = require('../index')
 
 let config = {
   exchange: 'night',
+  type:'direct', //direct, topic 和fanout。fanout就是广播模式，
   queue: {
-    connection: 'amqp://admin:admin@192.168.31.9:5672',
+    connection: 'amqp://admin:admin@127.0.0.1:5672',
     channel: 'ZOO_QUEUE',
     consumerAdapters: [{
       queueName: 'task'
@@ -21,6 +22,8 @@ let config = {
     }]
   }
 }
+
+
 publisher.start(config, (err) => {
   if (err) console.log('publish start', err)
   console.log('publish start')
@@ -30,3 +33,4 @@ publisher.start(config, (err) => {
     console.log('publish success')
   })
 })
+

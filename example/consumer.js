@@ -11,8 +11,9 @@ const { consumer } = require('../index')
 
 let config = {
   exchange: 'night',
+  type:'direct', //direct, topic 和fanout。fanout就是广播模式，
   queue: {
-    connection: 'amqp://admin:admin@192.168.31.9:5672',
+    connection: 'amqp://admin:admin@127.0.0.1:5672',
     channel: 'ZOO_QUEUE',
     consumerAdapters: [{
       queueName: 'task'
@@ -22,8 +23,16 @@ let config = {
   }
 }
 
+
+
+
 consumer.start(config, (err, queueName,message) => {
   if (err) console.log('err', err)
   console.log('Consumer queueName.', queueName)
   console.log('Consumer started.', message)
 })
+
+
+
+
+
